@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "JS";
-    src: url(./fonts/JosefinSans-SemiBold.ttf);
+    src: url(./fonts/JosefinSans-VariableFont_wght.ttf);
 }
 
 /* Animations */
@@ -68,11 +68,11 @@
 
 .nav-link {
     text-align: left;
-    margin-left: 60px;
+    margin-left: 50px;
     text-decoration: none;
     padding-top: 10px;
     padding-bottom: 8px;
-    font-size: 23px;
+    font-size: 21px;
     color: white;
     
     display: inline-block;
@@ -100,55 +100,107 @@
 
 .nav-link:hover::after,
 .nav-link:focus::after {
-    transform: scaleX(1.1);
+    transform: scaleX(1.02);
     transform-origin: center;
+}
+
+.intro-1 {
+    opacity: 0;
+    animation: fade-up 0.7s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.intro-2 {
+    opacity: 0;
+    animation: fade-down 0.7s ease forwards;
+    animation-delay: 0.35s;
+}
+
+.intro-3 {
+    opacity: 0;
+    animation: fade-down 0.8s ease forwards;
+    animation-delay: 0.6s;
 }
 
 body {
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.836);
+    /* background-image: radial-gradient(circle at center, rgb(0, 0, 0), rgb(20, 20, 43)); */
+    height: 100vh; /* Ensures the body takes full viewport height */
+    display: flex; /* Centers content if needed, not strictly for glow */
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Dark background for better glow visibility */
+    position: relative; /* Needed for positioning the pseudo-element */
+    overflow: hidden; /* Prevents glow from extending beyond body boundaries */
 }
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%; /* Adjust size of the glow */
+    height: 100%; /* Adjust size of the glow */
+    background: radial-gradient(circle at center, rgb(0, 0, 0), rgb(20, 20, 43)); /* Glow color and transparency fade */
+    filter: blur(50px); /* Adjust blur for glow intensity */
+    z-index: -1; /* Puts the glow behind the content */
+
+}
+
 
 .body {
     width: 100%;
-    margin-top: 124px; 
-    animation: fade-up 0.5s ease forwards;
+    height: 100%;
+    margin-top: 119px; 
     color: white;
+    font-family: "JS";
+
 }
 
 h1 {
     text-align: center;
     font-family: "JS";
+    font-weight: 650;
     font-size: 47px;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 0;
+    font-weight: 250;
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+p {
+    font-size: 18px;
+    margin-left: 30px;
 }
 
 span {
     font-size: 52px;
 }
 
-p {
-    font-size: 18px;
-    font-family: "JS";
+.game-card {
+    transition: all ease 0.3s;
+    width: 30%;
 }
 
-.img-wrapper {
-    transform: translateY(0);
-    transition: transform 0.4s ease;
-    width: 100%;
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(128, 128, 128, 0.2);
 }
 
-img {
+.game-card img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
-    opacity: 0;
-    animation: fade-down 0.7s ease forwards;
-    animation-delay: 0.15s;
-    width: 80%;
-    height: auto;
-    margin-left: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.img-wrapper:hover {
-    transform: translateY(10px);
+.rounded {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
