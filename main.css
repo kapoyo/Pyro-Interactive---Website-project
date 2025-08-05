@@ -44,6 +44,15 @@
     }
 }
 
+@keyframes underline {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
 /* Intro Sequence */
 
 .intro-1 {
@@ -141,23 +150,23 @@
 
 body {
     width: auto;
-    height: 100vh; /* Ensures the body takes full viewport height */
-    display: flex; /* Centers content if needed, not strictly for glow */
+    height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000; /* Dark background for better glow visibility */
-    position: relative; /* Needed for positioning the pseudo-element */
-    overflow: auto; /* Prevents glow from extending beyond body boundaries */
+    background-color: #000;
+    position: relative;
+    overflow: auto;
 }
 
 body::before {
     content: '';
     position: fixed;
-    width: 100%; /* Adjust size of the glow */
-    height: 100%; /* Adjust size of the glow */
-    background: radial-gradient(circle at center, rgb(0, 0, 0), rgb(20, 20, 43)); /* Glow color and transparency fade */
-    filter: blur(0.5px); /* Adjust blur for glow intensity */
-    z-index: -1; /* Puts the glow behind the content */
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgb(0, 0, 0), rgb(20, 20, 43));
+    filter: blur(0.5px);
+    z-index: -1;
     background-attachment: fixed;
     overflow: hidden;
 
@@ -180,6 +189,12 @@ h1 {
     font-size: 47px;
 }
 
+h1 span {
+    font-size: 52px;
+    text-decoration: underline;
+}
+
+
 h3 {
     text-align: center;
     padding-top: 0;
@@ -188,18 +203,19 @@ h3 {
     line-height: 1.4;
 }
 
+
 p {
     font-size: 18px;
     margin-left: 30px;
 }
 
-span {
-    font-size: 52px;
-}
 
 .game-card {
     transition: all ease 0.3s;
-    width: 30%;
+    background-image: linear-gradient(to right, rgb(25, 14, 88), rgb(37, 43, 131));
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
 }
 
 .game-card:hover {
@@ -208,15 +224,23 @@ span {
 }
 
 .game-card img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
+    display: inline-block;
+    width: 100%;
+    height: 58%;
+    object-fit: cover;
 }
+
+.container h4 {
+    margin-left: 36px;
+    margin-top: 25px;
+    font-size: 28px;
+    font-weight: 650;
+}
+
+
 
 .rounded {
     border-radius: 20px;
-    overflow: hidden;
 }
 
 .shadow {
