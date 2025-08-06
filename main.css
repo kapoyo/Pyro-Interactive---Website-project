@@ -233,6 +233,7 @@ p {
     display: inline-block;
     transition: all ease 0.3s;
     background-image: linear-gradient(to right, rgb(25, 14, 88), rgb(37, 43, 131));
+    color: rgb(173, 153, 223);
     width: 600px;
     height: 500px;
     overflow: hidden;
@@ -242,6 +243,7 @@ p {
 .game-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(125, 70, 214, 0.233);
+    color: rgb(255, 255, 255);
 }
 
 .game-card img {
@@ -250,13 +252,31 @@ p {
     object-fit: cover;
 }
 
-.container h4 {
-    margin-left: 36px;
-    margin-top: 25px;
-    font-size: 28px;
-    font-weight: 650;
+.container {
+    overflow: hidden;
 }
 
+.container h4 {
+    margin-left: 36px;
+    margin-top: 27px;
+    font-size: 28px;
+    font-weight: 650;
+
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.container h5 {
+    float: right;
+    margin-top: 32px;
+    margin-right: 35px;
+}
+
+.container p {
+    margin-left: 30px;
+    margin-right: 30px;
+    clear: both;
+}
 
 
 .rounded {
