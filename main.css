@@ -114,23 +114,32 @@
     background-color: rgb(0, 0, 0);
     padding: 10px;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
-
-    #title{
-        text-align: center;
-        padding-top: 15px;
-        padding-bottom: 20px;
-    }
 }
 
-.nav-link {
-    text-align: left;
-    margin-left: 50px;
-    text-decoration: none;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     padding-top: 10px;
     padding-bottom: 8px;
     font-size: 21px;
+}
+
+.navbar-left {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.navbar-right {
+    text-align: right;
+    margin-right: 120px;
+}
+
+.nav-link {
+    margin-left: 29px;
+    text-decoration: none;
     color: white;
-    
     display: inline-block;
     position: relative;
     transition: color 0.3s ease;
@@ -147,7 +156,7 @@
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: 6px;
+    bottom: -4px;
     left: 0;
     transform-origin: center;
     transition: transform 0.2s ease;
@@ -160,6 +169,18 @@
     transform-origin: center;
 }
 
+.nav-title {
+    position: absolute;
+    float: right;
+    text-align: right;
+    margin-left: 50px;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    font-size: 21px;
+    color: white;
+
+}
 
 body {
     width: auto;
@@ -196,23 +217,19 @@ body::before {
 }
 
 h1 {
+    position: static;
     text-align: center;
     font-family: "JS";
     font-weight: 650;
-    font-size: 47px;
-}
-
-h1 span {
-    font-size: 52px;
-    text-decoration: underline;
+    font-size: 86px;
 }
 
 
-h3 {
+body h3 {
     text-align: center;
-    padding-top: 0;
+    margin-top: -30px;
     font-weight: 250;
-    font-size: 26px;
+    font-size: 27px;
     line-height: 1.4;
 }
 
@@ -257,6 +274,8 @@ p {
 }
 
 .container h4 {
+    position: absolute;
+    float: inline-start;
     margin-left: 36px;
     margin-top: 27px;
     font-size: 28px;
@@ -266,16 +285,27 @@ p {
     display: inline-flex;
 }
 
-.container h5 {
+.card-link {
+    text-decoration: none;
+    color: inherit;
     float: right;
-    margin-top: 32px;
+    margin-top: 37px;
     margin-right: 35px;
+
+
+}
+.card-link:hover {
+    text-decoration: underline;
 }
 
 .container p {
+    height: 128px;
+    position: relative;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
     margin-left: 30px;
     margin-right: 30px;
-    clear: both;
+    margin-top: 74px;
+    clear: both
 }
 
 
