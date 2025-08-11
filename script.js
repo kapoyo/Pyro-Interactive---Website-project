@@ -9,11 +9,4 @@ const navBar = `
     </div>
 `
 
-document.addEventListener("DOMContentLoader" function(
-    {
-        const navBarPlaceholder = document.getElementById()
-    }
-)
 
-
-}
