@@ -745,7 +745,7 @@ p {
     margin-top: 80px;
     border: 3px rgb(226, 213, 255) solid;
     background: linear-gradient(to top, rgb(4, 2, 8), rgb(18, 18, 59));
-    width: 50%;
+    width: 70%;
     height: 700px;
 
     display: flex;
@@ -755,6 +755,15 @@ p {
 
 .game-preview {
     margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.game-preview iframe {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: 100%;
+    min-width: 90%;
 }
 
 .features {
